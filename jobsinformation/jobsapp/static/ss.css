@@ -1,0 +1,26 @@
+body{
+	background-color: blue;
+	color: yellow;
+}
+h1{
+	color:yellow;
+	text-align: center;
+	font-family: 'Hanalei', cursive;
+}
+h3{
+	color: violet;
+	text-align: center;
+	font-family: 'Hanalei', cursive;
+}
+h2{
+	color:red;
+	text-align: center;
+	font-family: 'Hanalei', cursive;
+}
+table,tr,td,th{
+	margin:auto;
+	border:5px solid blue;
+	background:#00ff00;
+	font-size:25px; 
+	font-family: 'Potta One', cursive;
+}

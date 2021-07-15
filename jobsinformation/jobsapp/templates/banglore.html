@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{%extends 'index.html'%}
+{% block body_block%}
+	{%load static%}
+	<link rel="stylesheet" type="text/css" href="{% static 'banglore.css' %}">
+	<title></title>
+</head>
+<body>
+	<h1>Banglore Jobs Information</h1><hr>
+	<img src="{% static 'bngimage/ban.jpg' %}" alt="My image">
+	<img src="{% static 'bngimage/ban2.jpg' %}" alt="My image">
+	<img src="{% static 'bngimage/ban3.jpg' %}" alt="My image">
+	<p>
+		Bangalore, also known as Bengaluru (Kannada) is the capital of the Indian State of Karnataka. Bangalore is nicknamed the Garden City and was once called a Pensioner's Paradise. Located on the Deccan Plateau in the south-eastern part of Karnataka, Bangalore is India's third most populous city. There are a number of expats from across the world living in the city, thanks to the growing presence of Multi-National Companies.
+        Today as a large city and growing metropolis, Bangalore is home to many of the most well-recognised colleges and research institutions in India. Numerous public sector heavy industries, software companies, aerospace, telecommunications, and defence organizations are located in the city. Bangalore is known as the Silicon Valley of India because of its position as the nation's leading IT exporter. A demographically diverse city, Bangalore is a major economic and cultural hub and the fastest growing major metropolis in India.
+	</p>
+	
+{% if banglore_list %}
+<table>
+	<thead>
+		<th>Date</th>
+		<th>Company</th>
+		<th>Title</th>
+		<th>Address</th>
+		<th>Email</th>
+		<th>Phone Number</th>
+	</thead>
+	{% for job in banglore_list %}
+	<tr>
+		<td>{{job.date}}</td>
+		<td>{{job.company}}</td>
+		<td>{{job.title}}</td>
+		<td>{{job.address}}</td>
+		<td>{{job.email}}</td>
+		<td>{{job.phonenumber}}</td>
+	</tr>
+	{%endfor%}
+</table>
+{%else%}
+<p>No Jobs Found</p>
+{%endif%}
+{%endblock%}

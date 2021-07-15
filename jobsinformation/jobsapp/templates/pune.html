@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{%extends 'index.html'%}
+{% block body_block%}
+{%load static%}
+	<link rel="stylesheet" type="text/css" href="{% static 'pune.css' %}">
+	<title></title>
+</head>
+<body>
+	<h1>Pune Jobs Information</h1><hr>
+	<img src="{% static 'puneimage/p1.jpg' %}" alt="My image">
+	<img src="{% static 'puneimage/p2.jpg' %}" alt="My image">
+	<img src="{% static 'puneimage/p3.jpg' %}" alt="My image">
+	<p>
+		Chennai, formerly Madras, city, capital of Tamil Nadu state, southern India, on the Coromandel Coast of the Bay of Bengal. Known as the “Gateway to South India,” Chennai is a major administrative and cultural centre. Pop. (2001) city, 4,343,645; urban agglom., 6,560,242.
+	</p>
+	
+{% if pune_list %}
+<table>
+	<thead>
+		<th>Date</th>
+		<th>Company</th>
+		<th>Title</th>
+		<th>Address</th>
+		<th>Email</th>
+		<th>Phone Number</th>
+	</thead>
+	{% for job in pune_list %}
+	<tr>
+		<td>{{job.date}}</td>
+		<td>{{job.company}}</td>
+		<td>{{job.title}}</td>
+		<td>{{job.address}}</td>
+		<td>{{job.email}}</td>
+		<td>{{job.phonenumber}}</td>
+	</tr>
+	{%endfor%}
+</table>
+{%else%}
+<p>No Jobs Found</p>
+{%endif%}
+{%endblock%}

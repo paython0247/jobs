@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{%extends 'index.html'%}
+{% block body_block%}
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	
+	{%load static%}
+	<link rel="stylesheet" type="text/css" href="{% static 'dating.css' %}">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+	
+	<title></title>
+</head>
+<body>
+	<h1>Here List Of Registered Students Are Available</h1>
+{% if student_list %}
+<table>
+	<thead>
+		<th>Name</th>
+		<th>Marks </th>
+		<th>Address</th>
+		<th>Mobile </th>
+		<th>Email</th>
+	</thead>
+	{% for s in student_list %}
+	<tr>
+		<td>{{s.name}}</td>
+		<td>{{s.marks}}</td>
+		<td>{{s.add}}</td>
+		<td>{{s.mobile}}</td>
+		<td>{{s.email}}</td>
+	</tr>
+	{%endfor%}
+</table>
+{%else%}
+<p>No Student Found</p>
+{%endif%}
+{%endblock%}

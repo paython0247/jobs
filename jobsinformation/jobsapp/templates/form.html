@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{%extends 'index.html'%}
+{% block body_block%}
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+{%load static%}
+<link rel="stylesheet" type="text/css" href="{% static 'form.css' %}">
+
+	<title></title>
+</head>
+<body>
+	<h1>Student Registration form</h1>
+	<form method="POST">
+<div class="container" align="center">
+{{form.as_p}}
+{%csrf_token%}
+<input type="submit" class="btn btn-primmary-lg" value="Register">
+
+</div>
+</form>
+{%endblock%}

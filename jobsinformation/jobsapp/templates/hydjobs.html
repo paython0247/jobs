@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{%extends 'index.html'%}
+{% block body_block%}
+
+	{%load static%}
+	<link rel="stylesheet" type="text/css" href="{% static 'hyd.css' %}">
+	<title></title>
+</head>
+<body>
+	<h1>Hyderabad Jobs Information</h1><hr>
+	<img src="{% static 'imagehyd/pic1.jpg' %}" alt="My image">
+	<img src="{% static 'imagehyd/pic2.jpg' %}" alt="My image">
+	<img src="{% static 'imagehyd/pic4.jpg' %}" alt="My image">
+	<p>
+		Hyderabad city is the capital city of the Indian state  of Telangana. The city has an estimated population of around 8 million, making it 4th largest city in India , while the population of the metropolitan area was estimated above 9 million. Religiously and culturally, the city is united with Hindus, Muslims and Christians. Hyderabad city is known for its rich history, food and its multi-lingual culture, both geographically and culturally. Founded in the year 1591 by fifth Qutb Shahi Ruler Muhammad Quli Qutb Shah.
+	</p>
+{% if hyd_list %}
+<table>
+	<thead>
+		<th>Date</th>
+		<th>Company</th>
+		<th>Title</th>
+		<th>Address</th>
+		<th>Email</th>
+		<th>Phone Number</th>
+	</thead>
+	{% for job in hyd_list %}
+	<tr>
+		<td>{{job.date}}</td>
+		<td>{{job.company}}</td>
+		<td>{{job.title}}</td>
+		<td>{{job.address}}</td>
+		<td>{{job.email}}</td>
+		<td>{{job.phonenumber}}</td>
+	</tr>
+	{%endfor%}
+</table>
+{%else%}
+<p>No Jobs Found</p>
+{%endif%}
+{%endblock%}
